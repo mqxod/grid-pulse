@@ -9,6 +9,14 @@ import { AdBanner } from './src/components/AdBanner';
 import { StartOverlay } from './src/components/StartOverlay';
 import { useGameEngine } from './src/hooks/useGameEngine';
 import { useAudio } from './src/hooks/useAudio';
+import mobileAds from 'react-native-google-mobile-ads';
+
+// Initialize the Google Mobile Ads SDK
+mobileAds()
+  .initialize()
+  .then(adapterStatuses => {
+    console.log('AdMob initialization complete');
+  });
 
 function Game() {
   const insets = useSafeAreaInsets();
